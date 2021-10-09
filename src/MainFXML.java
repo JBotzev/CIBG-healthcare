@@ -1,7 +1,9 @@
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
@@ -13,10 +15,14 @@ public class MainFXML extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainFXML.class.getResource("Main.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        Parent root = FXMLLoader.load((getClass().getResource("fxml/Main.fxml")));
+
+       //Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        //scene.getStylesheets().add("css/Main.css");
+        //scene.getStylesheets().add(getClass().getResource("css/Main.css").toString());
         stage.setTitle("Hello!");
-        stage.setScene(scene);
+
+        stage.setScene(new Scene(root));
         stage.show();
     }
 }

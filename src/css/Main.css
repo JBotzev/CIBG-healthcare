@@ -1,0 +1,20 @@
+.button {
+    -fx-background-color: white;
+}
+
+.button:hover {
+    -fx-background-color: #006193;
+}
+
+.button:pressed {
+    -fx-background-color: #004a6e;
+}
+
+#base {
+    -fx-background-color: #01689b;
+}
+
+.table-view .column-header,
+.table-view .column-header-background .filler {
+    -fx-background-color: #004a6e;
+}
