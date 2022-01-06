@@ -1,6 +1,11 @@
+import pandas as pd
+
 from Models.MLR import MLR
 
 def main():
+
+    df_csv = pd.read_csv('res/largeDataCategorical.csv')
+    print(df_csv)
 
     print("Feature Selection . . .")
 
@@ -9,9 +14,9 @@ def main():
 
     #TODO - pass real data
 
-    mlr = MLR()
-    mlr.evaluate()
-    mlr.predict()
+    # mlr = MLR()
+    # mlr.evaluate()
+    # mlr.predict()
 
 
     print("\nOther Methods . . .")
