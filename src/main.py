@@ -10,22 +10,38 @@ from Models.MLR import MLR
 
 def main():
 
-    df_csv = pd.read_csv('res/largeDataCategorical.csv')
+    df_csv = pd.read_csv('src\\res\\largeDataCategorical.csv')
     print(df_csv)
 
     X = df_csv['X']
     Y = df_csv['Y']
-    print(X)
+    
+    x = []
+    y = []
+    for ar in X:
+        st = ar[1:-1]
+        arr = st.split(',')
+        arr = list(map(float, arr))
+        x.append(arr)
+    for ar in Y:
+        st = ar[1:-1]
+        arr = st.split(',')
+        arr = list(map(float, arr))
+        y.append(arr)
 
-    X_train, X_test, y_train, y_test = sklearn.model_selection.train_test_split(X, Y, test_size = 0.20, random_state = 5)
+    
+    
+
+
+    #X_train, X_test, y_train, y_test = sklearn.model_selection.train_test_split(X, Y, test_size = 0.20, random_state = 5)
 
     model = LogisticRegression(multi_class='multinomial', solver='lbfgs')
     # model.fit(X_train, y_train)
 
-    model.fit(X_train,y_train)
-    y_pred = model.predict(X_test)
-    print('Accuracy: {:.2f}'.format(accuracy_score(y_test, y_pred)))
-    print('Error rate: {:.2f}'.format(1 - accuracy_score(y_test, y_pred)))
+    #model.fit(X_train,y_train)
+    #y_pred = model.predict(X_test)
+    #print('Accuracy: {:.2f}'.format(accuracy_score(y_test, y_pred)))
+    #print('Error rate: {:.2f}'.format(1 - accuracy_score(y_test, y_pred)))
 
 
 
